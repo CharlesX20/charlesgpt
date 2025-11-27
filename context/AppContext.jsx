@@ -70,6 +70,11 @@ export const AppContextProvider = ({children}) => {
         if(user){
             fetchUserChats();
         }
+        else {
+            // Clear all chat data when user logs out
+            setChats([]);
+            setSelectedChat(null);
+        }
     }, [user])
 
     const value = {
